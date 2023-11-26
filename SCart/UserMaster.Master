@@ -1,0 +1,314 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UserMaster.master.cs" Inherits="SCart.UserMaster" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <head><script async="" src="https://c.amazon-adsystem.com/bao-csm/forensics/a9-tq-forensics-incremental.min.js" crossorigin="anonymous"></script><script async="" src="https://images-eu.ssl-images-amazon.com/images/I/31bJewCvY-L.js" crossorigin="anonymous"></script><script>var aPageStart = (new Date()).getTime();</script><meta charset="utf-8">
+<!-- sp:end-feature:head-start -->
+<!-- sp:feature:csm:head-open-part1 -->
+       <style>
+        .jogii{
+border: 1px solid transparent;
+     padding: 0.38rem 0.75rem 0.44rem 0.1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #1f2d3d;
+    background-color: #ff0000;
+    border-color: #ffc107;
+    box-shadow: none;
+    text-align:center
+}
+        </style>
+<script type="text/javascript">var ue_t0=ue_t0||+new Date();</script>
+<!-- sp:end-feature:csm:head-open-part1 -->
+<!-- sp:feature:cs-optimization -->
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://images-eu.ssl-images-amazon.com" crossorigin="">
+<link rel="preconnect" href="https://images-eu.ssl-images-amazon.com" crossorigin="">
+<link rel="dns-prefetch" href="https://m.media-amazon.com" crossorigin="">
+<link rel="preconnect" href="https://m.media-amazon.com" crossorigin="">
+<link rel="dns-prefetch" href="https://completion.amazon.com" crossorigin="">
+<link rel="preconnect" href="https://completion.amazon.com" crossorigin="">
+<!-- sp:end-feature:cs-optimization -->
+<!-- sp:feature:csm:head-open-part2 -->
+ 
+<script>window.ue && ue.count && ue.count('CSMLibrarySize', 3172)</script>
+<!-- sp:end-feature:csm:head-close -->
+<!-- sp:feature:head-close -->
+<script>
+window.P && P.register('bb');
+if (typeof ues === 'function') {
+  ues('t0', 'portal-bb', new Date());
+  ues('ctb', 'portal-bb', 1);
+}
+</script>
+<script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/61ZS63EQSsL.js?AUIClients/AmazonUIjQuery"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/11Y+5x+kkTL._RC|51jfxuELZ4L.js,11yKORv-GTL.js,11GgN1+C7hL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21SDJtBU-PL.js,012FVc3131L.js,11rRjDLdAVL.js,516j7qaWchL.js,11kWu3cNjYL.js,11tMohjWmVL.js,11OREnu1epL.js,11r3xGoc2RL.js,21ssiLNIZvL.js,0190vxtlzcL.js,51+N26vFcBL.js,01JYHc2oIlL.js,31nfKXylf6L.js,01ezj5Rkz1L.js,11bEz2VIYrL.js,31o2NGTXThL.js,01rpauTep4L.js,01UrOK220PL.js_.js?AUIClients/AmazonUI"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/51AcmceL-rL.js?AUIClients/CardJsRuntimeBuzzCopyBuild"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/11KL9q3-ZWL._RC|61wLaoe8VSL.js,51P57f4sEpL.js,11tZt25FAcL.js,21yF4pWForL.js,31xxXYsiMJL.js,01PQKs49DyL.js_.js?AUIClients/DetailPageDesktopImageBlockMetaAsset_BUYX_DP_IMAGE_BLOCK_SUBASSETING_659102&amp;l8DdZR3+#desktop.in.559071-T1.712488-C.342971-T1.585425-T1.672366-T1.662089-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/410QKpjSG8L._RC|31tHKQ5aTkL.js_.js?AUIClients/MarsFamilyStripeWidgetAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/61rCQ3k2qmL.js?AUIClients/AmazonDevicesCompatibilityAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/01U2-VGEvdL.js?AUIClients/MarsGenerationsWidgetAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/31YfBqNCa7L.js?AUIClients/MarsPickAVersionWidgetAssets&amp;usC7/+ia#639350-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/01QWRt2tRTL.js?AUIClients/MarsUtilityAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/41jHYv88pGL.js?xcp"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/318xW-VGoLL.js?AUIClients/MarsContentGridAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/31L7S2xeNYL.js?AUIClients/MarsJumpLinksWidgetAssets&amp;itHbjcbs#684973-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/01I3s4SlPiL._RC|21A5Hkr6--L.js,31V0mJ-srZL.js,11-asXJWfkL.js,01s80TZosWL.js,015gdESSAtL.js,01GJONmvbXL.js,017VcaK0ACL.js,01Gujc1zuyL.js,61LGPQyMsqL.js_.js?AUIClients/DetailPageMetaAssetFixed&amp;nyuUdbMR#desktop.in.466449-T1.564914-T4.671037-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/01rg6Ce9FhL.js?AUIClients/DetailPageEverywhereMetaAsset"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/51Juoc286HL.js?AUIClients/DetailPageTwisterPlusAssets&amp;dG3skl5v#desktop.712712-T1.645694-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/21E2aIDj6DL._RC|11qajewhV-L.js,016QFWAAdML.js_.js?AUIClients/AmazonDevicesDetailPageCriticalAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/01YgpCubxaL.js?AUIClients/InstallmentPaymentDetailPageMetaAsset#desktop"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/41bVTGEWAZL.js?AUIClients/DetailPageStorePickupAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/313sHJh1gZL.js?AUIClients/DetailPagePostPurchaseAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/41XVFuR4%2BFL.js?AUIClients/AmazonPopoversAUIShim#in"></script><script type="text/javascript" async="" src="https://m.media-amazon.com/images/G/01/vap/video/airy2/prod/2.0.1460.0/js/airy.skin._CB485981857_.js"></script><link rel="stylesheet" href="https://m.media-amazon.com/images/G/01/vap/video/airy2/prod/2.0.1460.0/css/beacon._CB485971591_.css"><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/61%2BVi9Pq%2ByL.js?AUIClients/AmazonDevicesDetailPageLegacyAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/41RpVkWgyZL.js?AUIClients/MarsSolutionAreaCardsWidgetAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/21xq+q3WVUL.js?AUIClients/MarsDeviceUpgraderAssets"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/41dS7qASOrL.js?xcp"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/61xVNzLtbaL.js?AUIClients/AskAuiAssets&amp;SJe+ETvm#696356-T2.696480-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/41e3VeTQEiL._RC|01JMhqKAiVL.js,11KGVmb0nxL.js,41dL09N-ijL.js,31-8EzH-5nL.js,01VSu9SK-XL.js,41l6Ts6x3oL.js_.js?AUIClients/DesktopMedleyFilteringMetaAsset&amp;AXTJ5Fo9#386124-T1.666973-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/11Y7GKjqEhL.js?xcp"></script><script type="text/javascript" async="" charset="utf-8" src="https://images-eu.ssl-images-amazon.com/images/S/apesafeframe/ape/sf/desktop/DAsf-1.50.caedd7e6.js?csm_attribution=APE-SafeFrame" crossorigin="anonymous"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/51KKElsXjTL.js?xcp"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/21q6fNgsQrL._RC|21XJFDMQuNL.js,11OyIHCq0lL.js_.js?AUIClients/HardlinesFeatureDetailPageMetaAsset"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://images-eu.ssl-images-amazon.com/images/I/41W974vG8QL._RC|71zzjyvEIHL.js,01F+A05ogQL.js,01phmzCOwJL.js,01eOvPdxG7L.js,71RDRWJQQQL.js,41306Iio4NL.js,115pV8Rl02L.js,01+pnQJuQ0L.js,21rDHgaooIL.js,41LFml+7fVL.js,51t-JTxfnwL.js,317BC63dC8L.js,11lEMI5MhIL.js,31c7Fn9h9gL.js,01LEzWzrPZL.js,01AqeWA7PKL.js_.js?AUIClients/NavDesktopUberAsset&amp;lLvq0Ux1#desktop.language-en.in.488400-T1.488413-T1.366740-T1.310484-T1"></script><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/415mYCiWuaL._RC|516cT5+hJHL.js,01wFfxST+ZL.js,018-nGQj6aL.js,11Xxd-w8V7L.js,41Debmz01QL.js,01YIzMLbqiL.js,216mhluQMRL.js,110SJ0xcEvL.js,51UZArUOy-L.js,211YhnJ8MAL.js,21KWmaJVAeL.js,31oAl8dJC2L.js,41VI+ex+36L.js,41RYqJbf3pL.js,71KKsPQki+L.js,31klbJN6PlL.js,31y+4gWgSSL.js,31Nb5hZQizL.js,41lkyHEebjL.js,11PUEGgF9FL.js,01WNBm1NhqL.js,41Dds42UuNL.js,01TQyo0bnIL.js,21AoSzCxkoL.js,61WA5ygazaL.js,21LTybXmmzL.js,01GhKb2usNL.js,111zW1Nhl9L.js,013eoEBTVUL.js,01KaPCMyotL.js,21F+2VGtGTL.js,014kCoIHgIL.js,11y+bwjSdaL.js,11bUDfY98zL.js,31EFtqFUPbL.js,21YblE14ZTL.js,01+oIQ0jY7L.js,412nrwABhFL.js,51gA29ZggrL.js,01j5DeZSMzL.js,31nmhNJL7CL.js,41CFiHS-ejL.js,31IpDiN7OcL.js,11LSI8IU0NL.js,011VhuFIPDL.js,51PfmJhsO0L.js,014sfuxbj+L.js,01tx7ThnHlL.js,31KDiyJXc5L.js,0151WYq70NL.js,01vzW+iAssL.js,21rKj0pl6mL.js,01cOcwrw2+L.js,310-2ScEiIL.js,016G7uDqQML.js_.js?AUIClients/AmazonDevicesDetailPageNonCriticalAssets_MAKO_SOPP_WEB_INDIA_431364_T1&amp;LNLZj29h#desktop.language-en.in.725563-T1.408490-T1.195406-T1.368370-C.602938-T1.636574-T1.599369-T1.304598-T1.184660-C.488124-T1.427308-T1.458655-T1.707504-T1.540891-T1.325177-T1.647591-T1.551173-T1.420261-T1.567944-T1"></script><style></style><script type="text/javascript" async="" crossorigin="anonymous" src="https://m.media-amazon.com/images/I/81PUvRgN2sL.js?AUIClients/FWCIMAssets"></script></head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SCart</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="hold-transition sidebar-mini">
+    <form id="MyData" runat="server">
+        <div class="wrapper">
+
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="index3.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- SEARCH FORM -->
+
+
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Messages Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="#">
+                            <i class="far fa-comments"></i>
+                            <span class="badge badge-danger navbar-badge">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <a href="#" class="dropdown-item">
+                                <!-- Message Start -->
+                                <div class="media">
+                                    <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                                    <div class="media-body">
+                                        <h3 class="dropdown-item-title">Brad Diesel
+                 
+                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                        </h3>
+                                        <p class="text-sm">Call me whenever you can...</p>
+                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>4 Hours Ago</p>
+                                    </div>
+                                </div>
+                                <!-- Message End -->
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <!-- Message Start -->
+                                <div class="media">
+                                    <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                    <div class="media-body">
+                                        <h3 class="dropdown-item-title">John Pierce
+                 
+                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                                        </h3>
+                                        <p class="text-sm">I got your message bro</p>
+                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>4 Hours Ago</p>
+                                    </div>
+                                </div>
+                                <!-- Message End -->
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <!-- Message Start -->
+                                <div class="media">
+                                    <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                    <div class="media-body">
+                                        <h3 class="dropdown-item-title">Nora Silvester
+                 
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                                        </h3>
+                                        <p class="text-sm">The subject goes here</p>
+                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>4 Hours Ago</p>
+                                    </div>
+                                </div>
+                                <!-- Message End -->
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                        </div>
+                    </li>
+                    <!-- Notifications Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="#">
+                            <i class="far fa-bell"></i>
+                            <span class="badge badge-warning navbar-badge">15</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <span class="dropdown-header">15 Notifications</span>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-envelope mr-2"></i>4 new messages
+           
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-users mr-2"></i>8 friend requests
+           
+                            <span class="float-right text-muted text-sm">12 hours</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-file mr-2"></i>3 new reports
+           
+                            <span class="float-right text-muted text-sm">2 days</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                            <i class="fas fa-th-large"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.navbar -->
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <!-- Brand Logo -->
+                <a href="index3.html" class="brand-link">
+                    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <span class="brand-text font-weight-light">Weltec</span>
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <%--<img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">--%>
+
+                                 <asp:Image ID="ImageProfileImage" class="img-circle elevation-2" runat="server" />
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block">
+                                 <asp:Label ID="lblName" runat="server" Text="Label"></asp:Label>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SidebarSearch Form -->
+                    <div class="form-inline">
+                        <div class="input-group" data-widget="sidebar-search">
+                            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-sidebar">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                            <li class="nav-item menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Starter Pages
+               
+                                    <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Category</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ProductList.aspx" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Product</p>
+                                        </a>
+                                    </li>
+                                      </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Sub Category</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Simple Link
+               
+                                    <span class="right badge badge-danger">New</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+                <div class="p-3">
+                    <h5>Title</h5>
+                    <p>Sidebar content</p>
+                </div>
+            </aside>
+            <!-- /.control-sidebar -->
+
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="float-right d-none d-sm-inline">
+                    Anything you want
+   
+                </div>
+                <!-- Default to the left -->
+                <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+ 
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- REQUIRED SCRIPTS -->
+
+        <!-- jQuery -->
+        <script src="plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="dist/js/adminlte.min.js"></script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SCartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CategoryMaster">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="300" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="CategoryImage" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="LoginMaster">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="300" />
+          <Property Name="Password" Type="nvarchar" MaxLength="300" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="Id" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="ProductMaster">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="SubCategoryId" Type="int" />
+          <Property Name="ProductTitle" Type="nvarchar" MaxLength="300" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="300" />
+          <Property Name="ProductPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ProductQuentity" Type="int" />
+          <Property Name="ProductImage" Type="nvarchar(max)" />
+          <Property Name="ShortDiscription" Type="nvarchar" MaxLength="300" />
+          <Property Name="LongDiscription" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="SubCategoryMaster">
+          <Key>
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="SubCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="SubCategoryName" Type="nvarchar" MaxLength="300" />
+          <Property Name="Datails" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="User_Master">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="300" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <Function Name="SP_BindSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GETCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_GETLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GETSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_InsertProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryId" Type="int" Mode="In" />
+          <Parameter Name="SubCategoryId" Type="int" Mode="In" />
+          <Parameter Name="ProductTitle" Type="nvarchar" Mode="In" />
+          <Parameter Name="ProductName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ProductPrice" Type="decimal" Mode="In" />
+          <Parameter Name="ProductQuentity" Type="decimal" Mode="In" />
+          <Parameter Name="ProductImage" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ShortDiscription" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LongDiscription" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Isactive" Type="int" Mode="In" />
+          <Parameter Name="mode" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertSubCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryId" Type="int" Mode="In" />
+          <Parameter Name="SubCategoryName" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Datails" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_SETCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Details" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CategoryImage" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_SETUserAndLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_SHOWPRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_ViewProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UserMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="SCartModelStoreContainer">
+          <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginMaster" EntityType="Self.LoginMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductMaster" EntityType="Self.ProductMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubCategoryMaster" EntityType="Self.SubCategoryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Master" EntityType="Self.User_Master" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SCartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CategoryMaster">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="LoginMaster">
+          <Key>
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="LoginId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="Id" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ProductMaster">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="SubCategoryId" Type="Int32" />
+          <Property Name="ProductTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ProductPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProductQuentity" Type="Int32" />
+          <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShortDiscription" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="LongDiscription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SubCategoryMaster">
+          <Key>
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="SubCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="SubCategoryName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Datails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="User_Master">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="SCartEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CategoryMasters" EntityType="Self.CategoryMaster" />
+          <EntitySet Name="LoginMasters" EntityType="Self.LoginMaster" />
+          <EntitySet Name="ProductMasters" EntityType="Self.ProductMaster" />
+          <EntitySet Name="SubCategoryMasters" EntityType="Self.SubCategoryMaster" />
+          <EntitySet Name="User_Master" EntityType="Self.User_Master" />
+          <FunctionImport Name="SP_BindSubCategory" ReturnType="Collection(SCartModel.SP_BindSubCategory_Result)">
+          <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GETCategory" ReturnType="Collection(SCartModel.SP_GETCategory_Result)" />
+          <FunctionImport Name="SP_GETLogin" ReturnType="Collection(SCartModel.SP_GETLogin_Result)">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GETSubCategory" ReturnType="Collection(SCartModel.SP_GETSubCategory_Result)" />
+          <FunctionImport Name="SP_InsertProduct" ReturnType="Collection(SCartModel.SP_InsertProduct_Result)">
+            <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+            <Parameter Name="SubCategoryId" Mode="In" Type="Int32" />
+            <Parameter Name="ProductTitle" Mode="In" Type="String" />
+            <Parameter Name="ProductName" Mode="In" Type="String" />
+            <Parameter Name="ProductPrice" Mode="In" Type="Decimal" />
+            <Parameter Name="ProductQuentity" Mode="In" Type="Decimal" />
+            <Parameter Name="ProductImage" Mode="In" Type="String" />
+            <Parameter Name="ShortDiscription" Mode="In" Type="String" />
+            <Parameter Name="LongDiscription" Mode="In" Type="String" />
+            <Parameter Name="Isactive" Mode="In" Type="Int32" />
+            <Parameter Name="mode" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertSubCategory">
+            <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+            <Parameter Name="SubCategoryName" Mode="In" Type="String" />
+            <Parameter Name="Datails" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SETCategory">
+            <Parameter Name="CategoryName" Mode="In" Type="String" />
+            <Parameter Name="Details" Mode="In" Type="String" />
+            <Parameter Name="CategoryImage" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SETUserAndLogin">
+            <Parameter Name="FullName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_SHOWPRODUCT" ReturnType="Collection(SCartModel.SP_SHOWPRODUCT_Result)" />
+          <FunctionImport Name="SP_ViewProduct" ReturnType="Collection(SCartModel.SP_ViewProduct_Result)">
+          <Parameter Name="ProductId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UserMaster">
+            <Parameter Name="FullName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_BindSubCategory_Result">
+          <Property Type="Int32" Name="SubCategoryId" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+          <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Datails" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GETCategory_Result">
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="String" Name="CategoryImage" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GETLogin_Result">
+          <Property Type="Int32" Name="LoginId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="300" />
+          <Property Type="Int32" Name="RoleId" Nullable="true" />
+          <Property Type="Int32" Name="Id" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GETSubCategory_Result">
+          <Property Type="Int32" Name="SubCategoryId" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+          <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Datails" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+          <Property Type="Int32" Name="CategoryId1" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="String" Name="CategoryImage" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_InsertProduct_Result">
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="String" Name="CategoryImage" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_SHOWPRODUCT_Result">
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+          <Property Type="Int32" Name="SubCategoryId" Nullable="true" />
+          <Property Type="String" Name="ProductTitle" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="300" />
+          <Property Type="Decimal" Name="ProductPrice" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="ProductQuentity" Nullable="true" />
+          <Property Type="String" Name="ProductImage" Nullable="true" />
+          <Property Type="String" Name="ShortDiscription" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="LongDiscription" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+          <Property Type="Int32" Name="CategoryId1" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Details" Nullable="true" />
+          <Property Type="String" Name="CategoryImage" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive1" Nullable="true" />
+          <Property Type="Int32" Name="SubCategoryId1" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId2" Nullable="true" />
+          <Property Type="String" Name="SubCategoryName" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="Datails" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive2" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_ViewProduct_Result">
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+          <Property Type="Int32" Name="SubCategoryId" Nullable="true" />
+          <Property Type="String" Name="ProductTitle" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="300" />
+          <Property Type="Decimal" Name="ProductPrice" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="ProductQuentity" Nullable="true" />
+          <Property Type="String" Name="ProductImage" Nullable="true" />
+          <Property Type="String" Name="ShortDiscription" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="LongDiscription" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SCartModelStoreContainer" CdmEntityContainer="SCartEntities">
+          <EntitySetMapping Name="CategoryMasters">
+            <EntityTypeMapping TypeName="SCartModel.CategoryMaster">
+              <MappingFragment StoreEntitySet="CategoryMaster">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginMasters">
+            <EntityTypeMapping TypeName="SCartModel.LoginMaster">
+              <MappingFragment StoreEntitySet="LoginMaster">
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductMasters">
+            <EntityTypeMapping TypeName="SCartModel.ProductMaster">
+              <MappingFragment StoreEntitySet="ProductMaster">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductQuentity" ColumnName="ProductQuentity" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+                <ScalarProperty Name="LongDiscription" ColumnName="LongDiscription" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubCategoryMasters">
+            <EntityTypeMapping TypeName="SCartModel.SubCategoryMaster">
+              <MappingFragment StoreEntitySet="SubCategoryMaster">
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="Datails" ColumnName="Datails" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Master">
+            <EntityTypeMapping TypeName="SCartModel.User_Master">
+              <MappingFragment StoreEntitySet="User_Master">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_BindSubCategory" FunctionName="SCartModel.Store.SP_BindSubCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SCartModel.SP_BindSubCategory_Result">
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="Datails" ColumnName="Datails" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GETCategory" FunctionName="SCartModel.Store.SP_GETCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SCartModel.SP_GETCategory_Result">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GETLogin" FunctionName="SCartModel.Store.SP_GETLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SCartModel.SP_GETLogin_Result">
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GETSubCategory" FunctionName="SCartModel.Store.SP_GETSubCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SCartModel.SP_GETSubCategory_Result">
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="Datails" ColumnName="Datails" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CategoryId1" ColumnName="CategoryId1" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+                <ScalarProperty Name="IsActive1" ColumnName="IsActive1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_InsertProduct" FunctionName="SCartModel.Store.SP_InsertProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SCartModel.SP_InsertProduct_Result">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_InsertSubCategory" FunctionName="SCartModel.Store.SP_InsertSubCategory" />
+          <FunctionImportMapping FunctionImportName="SP_SETCategory" FunctionName="SCartModel.Store.SP_SETCategory" />
+          <FunctionImportMapping FunctionImportName="SP_SETUserAndLogin" FunctionName="SCartModel.Store.SP_SETUserAndLogin" />
+          <FunctionImportMapping FunctionImportName="SP_SHOWPRODUCT" FunctionName="SCartModel.Store.SP_SHOWPRODUCT">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SCartModel.SP_SHOWPRODUCT_Result">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductQuentity" ColumnName="ProductQuentity" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+                <ScalarProperty Name="LongDiscription" ColumnName="LongDiscription" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CategoryId1" ColumnName="CategoryId1" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="CategoryImage" ColumnName="CategoryImage" />
+                <ScalarProperty Name="IsActive1" ColumnName="IsActive1" />
+                <ScalarProperty Name="SubCategoryId1" ColumnName="SubCategoryId1" />
+                <ScalarProperty Name="CategoryId2" ColumnName="CategoryId2" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="Datails" ColumnName="Datails" />
+                <ScalarProperty Name="IsActive2" ColumnName="IsActive2" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_ViewProduct" FunctionName="SCartModel.Store.SP_ViewProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SCartModel.SP_ViewProduct_Result">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ProductQuentity" ColumnName="ProductQuentity" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ShortDiscription" ColumnName="ShortDiscription" />
+                <ScalarProperty Name="LongDiscription" ColumnName="LongDiscription" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UserMaster" FunctionName="SCartModel.Store.UserMaster" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
