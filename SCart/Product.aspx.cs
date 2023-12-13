@@ -54,6 +54,9 @@ namespace SCart
 
                 ddlsubcategory.DataBind();
                 ddlsubcategory.Items.Insert(0, new ListItem("----Select SubCategory----", "0"));
+
+
+
             }
             else
             {
@@ -68,6 +71,7 @@ namespace SCart
         {
             Common objc = new Common();
             DataTable dt = new DataTable();
+            DataTable dr = new DataTable();
 
             dt = objc.GridViewProduct();
 

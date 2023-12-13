@@ -19,6 +19,7 @@ namespace SCart
         {
             Common objc = new Common();
             DataTable dt = new DataTable();
+            DataTable dt2= new DataTable();
             dt = objc.Login(txtEmail.Text, txtPass.Text);
             int RoleId = 0;
 
